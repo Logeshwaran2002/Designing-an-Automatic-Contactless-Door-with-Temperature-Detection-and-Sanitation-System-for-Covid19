@@ -52,10 +52,8 @@ void loop() {
           Serial.print("made");
           Serial.print("\n");
           
-          lcd.setCursor(0,0);
-          lcd.print("  NO DETECTION     ");
-          lcd.setCursor(0,1);
-          lcd.print("                 ");
+          lcd.setCursor(3,0);
+          lcd.print("NO DETECTION");
           covid();
           }   
 }
@@ -65,16 +63,16 @@ void covid(){
    Serial.print(temp_obj);
   
           if(temp_obj < 31){
-           lcd.setCursor(0,0);
-           lcd.print("  NO DETECTION     ");
+           lcd.setCursor(3,0);
+           lcd.print("NO DETECTION");
            lcd.setCursor(0,1);
-           lcd.print("                 ");  
+           lcd.clear(); 
           }
           
           if(temp_obj > 30 && temp_obj <38){ 
            digitalWrite(green,HIGH);
-           lcd.setCursor(0,0);
-           lcd.print("  TEMPERATURE     "); 
+           lcd.setCursor(3,0);
+           lcd.print("TEMPERATURE"); 
            lcd.setCursor(6,1);
            lcd.print(temp_obj);
            lcd.setCursor(8,1);
@@ -83,10 +81,10 @@ void covid(){
            lcd.begin(16, 2);
            lcd.clear();
            
-           lcd.setCursor(0,0);
-           lcd.print(" SANITIZE YOUR ");
-           lcd.setCursor(0,1);
-           lcd.print("     HANDS! ");
+           lcd.setCursor(2,0);
+           lcd.print("SANITIZE YOUR");
+           lcd.setCursor(6,1);
+           lcd.print("HANDS!");
            delay(3000);
 
            lcd.begin(16, 2);
@@ -117,7 +115,7 @@ void covid(){
           {
             digitalWrite(red,HIGH);
             lcd.setCursor(0,0);
-            lcd.print("TEMPERATURE:     "); 
+            lcd.print("TEMPERATURE:"); 
             lcd.setCursor(13,0);
             lcd.print(temp_obj);
             lcd.setCursor(15,0);
